@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px
+  }
+  
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+   
+  }
+  .column2{
+    float: left;
+    width: 50%;
+    padding: 5px;
+    text-align: center;
+      }
+  .column1{
+    flex-direction: column;
+    margin-bottom: 200px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .row1:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .add
+  {
+    margin-top: 3px;
+    margin-bottom:3px;
+  }
+  .row
+  {
+    margin-left: 0px !important;
+    border-bottom: 1px solid black;
+  }
+i{
+  color:#1976d2;
+  font-size: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+button
+{
+  margin-right: 30px;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #1976d2;
+  margin-top: 30px;
+}
+.checkout
+{
+  color: black;
+  background-color:#ffffff;
+  padding: 10px;
+  font-size: 15px;
+  margin-top: 10px;
+}
+.price
+{
+  color:black
+}
+table td
+{
+  color: black;
+  text-align: left;
+  font-size: 15px;
+}
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+}
+ 

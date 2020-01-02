@@ -1,0 +1,59 @@
+<div class="container column1" style="margin-top: 50px;">
+
+<div class="row" *ngFor="let item of items; let i = index" >
+  <div class="column"   >
+  <img src="../../assets/img/{{item.ImageUrl}}" class="center">
+  <h2 style="text-align: center;margin-top: 10px;margin-bottom: 10px">{{item.OfferText}}</h2>
+  </div>
+  <div class="column">
+    <h5 style="color:#1976d2; font-weight: bold;text-transform: uppercase;margin-top: 20px;">{{item.BrandName}}</h5>
+    <p>{{item.ProductName}}</p>
+    <h2>1 L</h2>
+    <h5 style="text-decoration:line-through">MRP  RS.{{item.MRP}}</h5>
+    <h5><span style="font-weight: bold;">RS.</span> {{item.Price}}</h5>
+<div class="row1">
+<button  class="add" (click)=" incrementQty(i);calculation(i,items[i].Quantity,items[i].Price)">Add Cart</button>
+<a (click)=" incrementQty(i);calculation(i,items[i].Quantity,items[i].Price)" ><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+{{items[i].Quantity}}
+<a (click)="decrementQty(i);calculation(i,items[i].Quantity,items[i].Price)"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+
+
+</div>
+  </div>
+</div>
+<div class="footer">
+    <div class="row">
+    <div class="column2" >
+      <table class="center">
+        <tr>
+          <td>Qty <span style="margin-right: 10px;margin-left: 20px;">:</span> </td>
+          <td>{{this.totalqty}}</td>
+        </tr>
+        <tr>
+          <td>Total<span style="margin-right: 10px;margin-left: 20px;">:</span> </td>
+          <td>{{this.totalprice}}</td>
+        </tr>
+        
+      </table>
+</div>
+<div class="column2">
+    <button class="checkout" [disabled]="this.totalqty==0 || this.totalqty==null" (click)="openModal(Modal)"  tooltip="Please Add Item to the Cart And Checkout!" >Checkout</button>
+
+  </div>
+</div>
+  </div>
+</div>
+
+ <ng-template #Modal>
+  <div class="modal-header  mg-b-20">
+    <h3 class="modal-title" id="exampleModalLabel">Transaction Status</h3>
+    <button type="button" class="close" (click)="modalRef.hide()" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" style="text-align:center">
+   <h4>Total Price : RS.{{this.totalprice}} </h4>
+   <h3 style="margin-top: 10px;margin-bottom: 30px;color: #1976d2;">Transaction Done Successfully! </h3>  
+    </div>
+
+</ng-template> 
